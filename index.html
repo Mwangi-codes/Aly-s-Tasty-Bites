@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aly's Tasty Bites</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            font-size: 17px;
+            color: #222;
+        }
+
+        .topnav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .topnav a {
+            color: #1affa3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #ffe066;
+            color: black;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-family: 'Georgia', serif;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-family: 'Georgia', serif;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        #home {
+            background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 1px 1px 4px #000;
+            font-size: xx-large;
+            height: 100vh;
+        }
+
+        #menu {
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .menu-item {
+            margin: 20px 0;
+            font-size: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #1affa3;
+            border: none;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #17c490;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+        }
+
+        .watermark-img {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            opacity: 0.05;
+            z-index: 900;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topnav .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .topnav a {
+                padding: 12px 20px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="logo">
+            <img src="logo.png" alt="Aly's Tasty Bites Logo">
+            <span class="logo-text">Aly's Tasty Bites</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#foodGallery">Food Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="home">
+            <h1>Welcome to Aly's Tasty Bites</h1>
+            <p>Delicious food made with love.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Aly's Tasty Bites, food is more than just a meal; it’s a celebration of culture, community, and
+                creativity. Inspired by the rich flavors of East Africa and infused with global culinary flair, every
+                dish is handcrafted with fresh, locally-sourced ingredients and a whole lot of heart. Whether you're
+                craving comforting classics or daring new tastes, we serve experiences that warm the soul and spark
+                connection. Step into our cozy space, breathe in the aroma of slow-cooked spices, and let our friendly
+                team treat you like family. One bite, and you’ll know you’ve found your new favorite spot.</p>
+        </section>
+
+        <section id="menu">
+            <h2>🍴 Our Signature Menu:</h2>
+            <h3>🍱 Starters</h3>
+            <ul>
+                <li>Butternut & Ginger Soup – creamy, with a warm East African spice twist.</li>
+                <li>Ndengu Samosas – crisp pastries filled with seasoned green grams.</li>
+                <li>Avocado Toast Bites – with Kachumbari topping & balsamic glaze.</li>
+                <li>Fried Mhogo Bites – cassava chips with chili-lime dip.</li>
+            </ul>
+            <h3>🥗 Salads</h3>
+            <ul>
+                <li>Tropical Fruit Salad – mango, pineapple, passionfruit & mint.</li>
+                <li>Quinoa & Chickpea Bowl – with roasted pumpkin & groundnut dressing.</li>
+                <li>Kachumbari – a zesty tomato-onion classic with lemon and coriander.</li>
+            </ul>
+            <h3>🍛 Mains</h3>
+            <ul>
+                <li>Grilled Chicken in Coconut Sauce – Kenyan-style, with aromatic herb rice.</li>
+                <li>Tilapia in Coconut Curry – Lake Victoria-inspired, served with soft chapati.</li>
+                <li>Nyama Choma – smoky grilled beef or goat with Ugali and Kachumbari.</li>
+                <li>Vegetarian Pilau – fragrant Swahili rice with spiced vegetables.</li>
+                <li>Cowpea Stew – hearty cowpea stew with matoke on the side.</li>
+            </ul>
+            <h3>🍰 Desserts</h3>
+            <ul>
+                <li>Mandazi – coconut beignets served warm with a dusting of sugar.</li>
+                <li>Mango Mousse – airy, chilled, tropical delight.</li>
+                <li>Chocolate Banana Cake – rich, with a swirl of Swahili halwa on top.</li>
+                <li>Sweet Ugali Cake – pan-seared and spiced with cardamom drizzle.</li>
+            </ul>
+            <h3>🍹 Drinks</h3>
+            <ul>
+                <li>Fresh Passion Juice – pulpy, lightly sweetened.</li>
+                <li>Tangawizi Iced Tea – spiced ginger chill with lemon.</li>
+                <li>Masala Chai – East African-style, creamy and soul-warming.</li>
+                <li>Classic Dawa Mocktail – honey, lime, and crushed ice with a herby finish.</li>
+                <li>Hot Chocolate – A blazing beverage, sweet and cosy. Tastes like home. </li>
+            </ul>
+        </section>
+
+        <section id="foodGallery">
+            <h2>Food Gallery</h2>
+            <div class="gallery">
+                <img src="food (1).jpeg" alt="Soup">
+                <img src="food (21).jpeg" alt="Samosas">
+                <img src="food (22).jpeg" alt="Avocado Toast">
+                <img src="food (23).jpeg" alt="Fried Cassava">
+                <img src="food (24).jpeg" alt="Salad">
+                <img src="food (25).jpeg" alt="Quinoa & Chickpea Bowl">
+                <img src="food (26).jpeg" alt="Kachumbari">
+                <img src="food (27).jpeg" alt="Grilled Chicken in Coconut Sauce">
+                <img src="food (28).jpeg" alt="Mandazi">
+                <img src="food (29).jpeg" alt="Chocolate Banana Cake">
+                <img src="food (30).jpeg" alt="Fresh Passion Juice">
+                <img src="food (31).jpeg" alt="Masala Chai">
+                <img src="food (32).jpeg" alt="Classic Dawa Mocktail">
+                <img src="food (33).jpeg" alt="Hot Chocolate">
+                <img src="food (34).jpeg" alt="Pizza">
+                <img src="food (35).jpeg" alt="Burger">
+                <img src="food (36).jpeg" alt="Pancakes">
+                <img src="food (37).jpeg" alt="Spaghetti">
+                <img src="food (38).jpeg" alt="Sandwiches">
+                <img src="food (39).jpeg" alt="And Many More...">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your Name" required>
+
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Your Email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Message" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+            <p>If you have any enquiries, complaints or feedback, feel free to call +254 712345678 or visit our website.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Aly's Tasty Bites. All rights reserved.
+    </footer>
+
+    <img src="logo.png" alt="Aly's Logo Watermark" class="watermark-img">
+
+    <script>
+        const links = document.querySelectorAll('#navLinks a');
+        links.forEach(link => {
+            link.addEventListener('click', function () {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
